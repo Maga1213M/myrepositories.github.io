@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0e0d0d;
+    font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    color: #fff;
+}
+
+.header {
+    padding: 25px 0;
+    width: 100%;
+    background-color: #f6762c;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+    column-gap: 30px;
+}
+
+.nav_link {
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
+    transition: all 0.5s;
+}
+
+.nav_link:hover {
+    opacity: 1;
+}
+
+.logo {
+    width: 50px;
+}
+
+.btn {
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+    width: 165px;
+    height: 50px;
+    background: #1bc002;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in;
+}
+
+.navbar {
+    transition: all 0.5s ease-in-out;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+.welcome {
+    padding: 240px 0;
+}
+
+.welcome_title {
+    font-size: 58px;
+}
+
+.products {
+    position: absolute;
+    right: 0;
+    /* Позиционируем картинку слева */
+    top: 50%;
+    /* Центрируем по вертикали */
+    transform: translateY(-50%);
+    /* Центрирование по вертикали */
+    display: block;
+    /* Убедимся, что это блочный элемент */
+}
+
+.content_text {
+    max-width: 550px;
+    
+}
+.content_text .btn {
+    margin-top: 10px;
+    margin-left: 50%;
+}
+
+/* Контейнер с контентом, который будет занимать доступное пространство */
+.container_two {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+    /* Это нужно для позиционирования .products внутри контейнера */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Размещаем элементы по краям */
+}
+
+.products img {
+    animation: imgBg 3s linear infinite;
+    max-width: 470px;
+    /* Ограничиваем размер изображения */
+    width: 100%;
+    /* Растягиваем картинку на всю ширину, если нужно */
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        background-color: #f6762c;
+        position: fixed;
+        top: 100px;
+        width: 100%;
+        padding: 10px 0 25px;
+        left: 0;
+        transform: translateX(-100%);
+    }
+
+    .nav_list {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+
+    .products {
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        top: 500px;
+        animation: animateBg 3s linear infinite;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .header .btn {
+        display: none;
+    }
+
+    .line {
+        margin-top: 100px;
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .card {
+        flex-basis: calc(100% - 20px);
+        /* Для мобильных устройств карточки занимают всю ширину */
+    }
+    .content_text {
+        margin-left: 10%;
+    }
+}
+
+.nav--open {
+    transform: translate(0) !important;
+}
+
+.hamburger--open .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger--open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger--open .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+.bar {
+    height: 2px;
+    width: 27px;
+    margin: 5px 0;
+    background: #fbfafa;
+    opacity: 0.8;
+    transition: all .3s ease-in-out;
+}
+
+
+@keyframes imgBg {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-1.5rem);
+    }
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    background-color: #383737;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    flex: 1 1 calc(50% - 20px);
+    /* для двух колонок */
+    max-width: 250px;
+    min-height: 400px;
+    /* Устанавливаем минимальную высоту */
+    height: 100%;
+    /* Убираем фиксированную высоту */
+    transition: all 0.5s ease;
+}
+.card:hover {
+    transform: scale(1.08);
+}
+
+.card_image {
+    flex-shrink: 0;
+    /* Изображение не сжимаем */
+    height: 250px;
+    /* Фиксированная высота для изображения */
+}
+
+.card_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Изображение растягивается, но сохраняет пропорции */
+}
+
+.card_content {
+    padding: 20px;
+    flex-grow: 1;
+    /* Контент растягивается по высоте */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Распределяем элементы */
+    align-items: center;
+    margin-top: auto;
+    height: 100%;
+}
+
+.card_title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.card_desc {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #ccc;
+    opacity: 0.8;
+}
+
+.card_content .btn {
+    margin-top: auto;
+    /* Кнопка всегда внизу */
+    width: 100%;
+    height: 40px;
+    background-color: #1bc002;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card_content .btn:hover {
+    background-color: #16a100;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-basis: calc(100% - 20px);
+        /* Для мобильных устройств */
+    }
+
+}
+
+.section_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0 15px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    width: 100%;
+
+}
